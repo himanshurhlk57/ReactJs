@@ -10,3 +10,22 @@ function Practise() {
 }
 
 export default Practise;
+
+
+
+let content;
+if (isLoggedIn) {
+  content = <AdminPanel />;
+} else {
+  content = <LoginForm />;
+}
+return (
+  <div>
+    {content}
+  </div>
+);
+
+
+<div>
+  {isLoggedIn && <AdminPanel />}
+</div>
