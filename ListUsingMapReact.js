@@ -61,6 +61,29 @@ function BlogList({ blogs, title }) {
 export default BlogList;
 
 
+
+const products = [
+  { title: 'Cabbage', id: 1 },
+  { title: 'Garlic', id: 2 },
+  { title: 'Apple', id: 3 },
+];
+
+
+const listItems = products.map(product =>
+  <li key={product.id}>
+    {product.title}
+  </li>
+);
+
+return (
+  <ul>{listItems}</ul>
+);
+
+
+For each item in a list, you should pass a string or a number that uniquely identifies that item among 
+its siblings. Usually, a key should be coming from your data, such as a database ID. React will rely on 
+your keys to understand what happened if you later insert, delete, or reorder the items.
+
    map function fires a callback function for each item whereby each time around
    we want to return a bit of jsx template and thats going to inside
    paranthesis ()
