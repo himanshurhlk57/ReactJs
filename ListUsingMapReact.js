@@ -59,3 +59,15 @@ function BlogList({ blogs, title }) {
 }
 
 export default BlogList;
+
+
+   map function fires a callback function for each item whereby each time around
+   we want to return a bit of jsx template and thats going to inside
+   paranthesis ()
+   when we output a list like this using the map method each root element
+   in the template that we return must have a key property
+   if we delete and update item from the array to keep track of those items
+   to do this you always need to add key attribute to each item we output otherwise react cannot
+   distinguish between list item in the dom so this is normally and
+   id property for each item in the array
+   and for all the list item in the array the id property must be unique
