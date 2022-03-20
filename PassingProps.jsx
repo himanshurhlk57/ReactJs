@@ -21,8 +21,7 @@ function ParentComponent() {
     </div>
   );
 }
-
-const ChildComponent = ({blogs, title}) => {
+const ChildComponent = ({ blogs, title }) => {
   return (
     <div>
       <h4>BlogList Component</h4>
@@ -33,8 +32,17 @@ const ChildComponent = ({blogs, title}) => {
           <h3>{blog.author}</h3>
         </div>
       ))}
+      <ChildComponentChild blogs={blogs} title="Baby Child component title"/>
     </div>
   );
 };
 
-export default Practise;
+const ChildComponentChild = ({blogs, title}) => {
+  return (
+    <div>
+      <h2>Child component title</h2>
+      <h3>{title}</h3>
+      <h2>{blogs[0].author}</h2>
+    </div>
+  );
+};
