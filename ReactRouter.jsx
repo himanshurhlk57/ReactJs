@@ -1,3 +1,72 @@
+
+import React from "react";
+import { BrowserRouter, Link, Route, Routes, Navigate } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+
+function RoutesApp() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Link to="/about">About</Link>
+        <br />
+        <Link to="/">Home</Link>
+        <br />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/*" element={<Page404 />} />
+          <Route path="/*" element={<Navigate to="/"/>} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default RoutesApp;
+
+import React from "react";
+
+function Home() {
+  return (
+    <div>
+      <h1> Home Page</h1>
+    </div>
+  );
+}
+
+export default Home;
+
+
+import React from "react";
+
+function About() {
+  return (
+    <div>
+      <h1> About Page</h1>
+    </div>
+  );
+}
+
+export default About;
+
+
+
+The first thing to do after installation is complete is to make React Router available 
+anywhere in your app.
+
+To do this, open the index.js file in the src folder and import BrowserRouter from 
+react-router-dom and then wrap the root component (the App component) in it.
+
+Routes acts as a container/parent for all the individual routes that will be created in our app.
+
+Route is used to create a single route. It takes in two attributes:
+
+Path: - / -> Any component whose pathname is a backslash will get rendered
+         first whenever the app loads for the first time
+         
+element, which specifies the component the route should render.
+
 Need way to introduce multiple different pages 
 or routes in our react application and the way we do this in react
 is with the react router
